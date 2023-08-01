@@ -25,4 +25,4 @@
 10. Adding "Show a To-Do" Functionality
 
 ## Lesson Reference
-These materials follow the development flow outlined in [this resource](https://raw.git.generalassemb.ly/SEIR-710-EC/Course-Materials/main/02_Lesson_Materials/Unit_2/resources/3-express-framework/3.2-express-routers-controllers-full.md).
+These materials follow the development flow outlined in [this resource](https://git.generalassemb.ly/SEIR-710-EC/Course-Materials/blob/main/02_Lesson_Materials/Unit_2/resources/3-express-framework/3.2-express-routers-controllers-full.md).
