@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var todosRouter = require('./routes/todos');
 
 var app = express();
 
@@ -19,8 +19,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// routing middleware -> inbound requests pass through each router function
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+// every in indexRouter, assumes http://localhost:3000/test-route
+app.use('/todos', todosRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
