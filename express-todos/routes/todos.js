@@ -5,6 +5,8 @@ var todosCtrl = require('../controllers/todos') // => { index: func(), show: fun
 /* GET todos index listing. - http://localhost:3000/todos/ */ 
 router.get('/', todosCtrl.index);
 
+
 /* GET todos show listing. - http://localhost:3000/todos/:id */ 
+router.get('/:id', todosCtrl.getOne)
 
 module.exports = router;

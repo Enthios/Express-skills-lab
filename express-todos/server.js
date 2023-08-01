@@ -11,6 +11,7 @@ var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
+// http://localhost:3000/views/-> todos/index.ejs
 app.set('view engine', 'ejs');
 
 app.use(logger('dev'));

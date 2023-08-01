@@ -2,7 +2,8 @@
 const Todo = require('../models/todo') // hint that we will be working with classes in the future
 
 module.exports = {
-    index
+    index,
+    getOne: show
 }
 
 function index(req,res){
@@ -13,5 +14,18 @@ function index(req,res){
     }
     res.render('todos/index', contextObject)
     // respond with a render - todos/index, {title, todos}
+}
+
+function show(req,res){
+    // res.send('hitting show route: '+req.params.id)
+    // show template
+
+    const id = req.params.id 
+    
+    const contextObject = {
+        title: 'Show Page',
+        todo: Todo.getOne(id) // identify the particular todo
+    }
+    res.render('todos/show', contextObject)
 }
 
