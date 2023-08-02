@@ -41,7 +41,5 @@ function createTodo(req,res){
     Todo.create(req.body) 
     //Todo.create() -> modifies the DB
     // res.send(req.body)
-    const allTodos = Todo.getAll()
-    console.log(allTodos[allTodos.length-1])
     res.redirect('/todos')
 }
