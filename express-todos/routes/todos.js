@@ -14,4 +14,6 @@ router.get('/:id', todosCtrl.getOne)
 /* POST todos create listing. - http://localhost:3000/todos */ 
 router.post('/', todosCtrl.create)
 
+/* DELETE todos destroying resource - http://localhost:3000/todos/:id */
+router.delete('/:id', todosCtrl.delete)
 module.exports = router;

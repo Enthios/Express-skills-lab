@@ -7,7 +7,8 @@ const todos = [
 module.exports = {
   getAll,
   getOne,
-  create
+  create,
+  destroy: deleteOne
 };
 
 function getAll() {
@@ -39,4 +40,17 @@ function create(data){
   // creating new id
   todos.push(newTodo)
   
+}
+
+// destroy - provided an id -> find the index of the resource and change/update the db
+function deleteOne(id){
+  // how can I find the position in an array for an object based on its property? 
+  const todoPosition = todos.findIndex(function(todo){
+    return todo.id === id
+  })
+  console.log(todoPosition)
+
+  todos.splice(todoPosition, 1) // splice modify an array based its arguments
+  //splice(idx, resourceToDel, valuesToAdd)
+  // code is working!
 }

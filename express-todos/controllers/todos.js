@@ -5,7 +5,8 @@ module.exports = {
     index,
     getOne: show,
     new: newTodo, 
-    create: createTodo
+    create: createTodo,
+    delete: deleteOne
 }
 
 function index(req,res){
@@ -15,6 +16,7 @@ function index(req,res){
         title: 'All To Dos', // "" - title is a variable in our template
         todos: Todo.getAll() // [ ] - todos is a variable in our template
     }
+    
     res.render('todos/index', contextObject)
     // respond with a render - todos/index, {title, todos}
 }
@@ -43,3 +45,15 @@ function createTodo(req,res){
     // res.send(req.body)
     res.redirect('/todos')
 }
+
+
+function deleteOne(req, res){
+    // res.send("Deleting Resource"+req.params.id)
+    const id = Number(req.params.id)
+    Todo.destroy(id)
+    res.redirect('/todos')
+}
+// deleteTodo()
+// take an identifier and pass it to our model method
+// Todo.destroy
+// redirect back to the list of todos
