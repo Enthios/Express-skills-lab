@@ -1,16 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> <%=title %></title>
-</head>
-<body>
+<%- include('../partials/header')%>
+    
     <h1>Todo Show</h1>
     <p>Todo: <%= todo.todo %> </p>
     <%= todo.done ? 'done' : 'not done' %>
-    <div>
-        <a href="/todos">Back to Todos</a>
-    </div>
-</body>
-</html>
+
+<%- include('../partials/footer')%>
