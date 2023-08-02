@@ -20,6 +20,14 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// custom middleware 
+app.use(function(req,res,next){
+  res.locals.time = new Date().toLocaleTimeString()
+  console.log('Time Stamp', res.locals.time)
+  next()
+})
+
+
 // routing middleware -> inbound requests pass through each router function
 app.use('/', indexRouter);
 // every in indexRouter, assumes http://localhost:3000/test-route

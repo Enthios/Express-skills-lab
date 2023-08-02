@@ -17,3 +17,6 @@
 - create - "/todos" - POST -> sending data to our controller - createTodo - updating the DB -> redirect back to index
 
 - destroy - "/todos/:id" - DELETE -> removing a resource from the DB -> redirect back to index 
+
+## Middleware 
+- definition: any functionality that occurs between a request coming into the server and the server responding to the client.

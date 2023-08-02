@@ -8,6 +8,7 @@ module.exports = {
 
 function index(req,res){
     // res.send('hitting todos index')
+    console.log(res.locals)
     const contextObject = {
         title: 'All To Dos', // "" - title is a variable in our template
         todos: Todo.getAll() // [ ] - todos is a variable in our template
