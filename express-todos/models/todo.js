@@ -6,7 +6,8 @@ const todos = [
 
 module.exports = {
   getAll,
-  getOne
+  getOne,
+  create
 };
 
 function getAll() {
@@ -14,7 +15,6 @@ function getAll() {
 }
 
 function getOne(id){
-
   // use an array method that will return a value based on a filter
   id = Number(id) 
   // req.params.id is always a string 
@@ -27,4 +27,16 @@ function getOne(id){
   // console.log('found todo', todos.find(todo=>todo.id === id))
   
   return todos.find(todo=>todo.id === id)
+}
+
+function create(data){
+
+  const newTodo = {...data} // capture the data (JS object)
+  newTodo.done = data.done ? true : false 
+  // conditionally update the new object with a done property (boolean)
+  // boolean is used by our template - no property -> template error 
+  newTodo.id = Date.now() % 1000000
+  // creating new id
+  todos.push(newTodo)
+  
 }

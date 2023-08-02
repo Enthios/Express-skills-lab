@@ -3,7 +3,9 @@ const Todo = require('../models/todo') // hint that we will be working with clas
 
 module.exports = {
     index,
-    getOne: show
+    getOne: show,
+    new: newTodo, 
+    create: createTodo
 }
 
 function index(req,res){
@@ -30,3 +32,16 @@ function show(req,res){
     res.render('todos/show', contextObject)
 }
 
+function newTodo(req,res){
+    // the new todo route -renders a new todo form (template)
+    res.render('todos/new', {title: 'New Todo'})
+}
+
+function createTodo(req,res){
+    Todo.create(req.body) 
+    //Todo.create() -> modifies the DB
+    // res.send(req.body)
+    const allTodos = Todo.getAll()
+    console.log(allTodos[allTodos.length-1])
+    res.redirect('/todos')
+}

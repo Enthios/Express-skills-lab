@@ -1,0 +1,26 @@
+<%- include('../partials/header') %>
+
+<!-- HTML Form to send data to a server -->
+<!-- FORM -> generating a new request -->
+<!-- FORM (w/o method) - GET Requeest -->
+<!-- form's method attribute manually define a form's request type -->
+<!-- An HTML form default request types (POST/GET) -->
+<!-- action attr is the destination for the request -->
+<!-- localhost:3000  - action: "/todos "-->
+<!-- POST - http://localhost:3000/todos  -->
+<form action="/todos" method="POST" autocomplete="off">
+
+    <!-- input fields in a form, provide data to the request body -->
+  <input type="text" name="todo">
+  <input type="checkbox" name="done">
+    <!-- input name attr -> identifiers -> name attribute provides a label for the data -->
+    <!-- x-www-urlencoded data or form-data -->
+    <!-- enctype => other data types - files  -->
+  <button type="submit">Save Todo</button>
+
+
+</form>
+
+<!-- after the form is submitted in the client  -->
+<!-- new request POST - http://localhost:3000/todos -->
+<%- include('../partials/footer') %>
