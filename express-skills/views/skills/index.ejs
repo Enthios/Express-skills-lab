@@ -3,7 +3,6 @@
     <h1>Todos</h1>
     <ul>
       <% todos.forEach(function(t) { %>
-        <!-- add a form to our list to delete the resource  -->
         <li>
           <form method="POST" action="/todos/<%=t.id%>?_method=DELETE">
             <button type="submit">X</button>

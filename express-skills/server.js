@@ -7,27 +7,20 @@ var methodOverride = require('method-override')
 
 
 var indexRouter = require('./routes/index');
-var todosRouter = require('./routes/todos');
+var todosRouter = require('./routes/skills');
 
 var app = express();
 
-// view engine setup
 app.set('views', path.join(__dirname, 'views'));
-// http://localhost:3000/views/-> todos/index.ejs
 app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
 app.use(express.json());
-
 app.use(express.urlencoded({ extended: false }));
-// request body -> parsed (converted from a string -> original data )
-// updates the request object - a body -> req.body -> form data is accessible
-
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'))
 
-// custom middleware 
 app.use(function(req,res,next){
   res.locals.time = new Date().toLocaleTimeString()
   console.log('Time Stamp', res.locals.time)
@@ -35,12 +28,10 @@ app.use(function(req,res,next){
 })
 
 
-// routing middleware -> inbound requests pass through each router function
+
 app.use('/', indexRouter);
-// every in indexRouter, assumes http://localhost:3000/test-route
 app.use('/todos', todosRouter);
 
-// catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
 });
