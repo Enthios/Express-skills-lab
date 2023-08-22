@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ![](https://i.imgur.com/vUOu9NW.jpg)
 
 # Express Routers & Controllers
@@ -26,3 +27,6 @@
 
 ## Lesson Reference
 These materials follow the development flow outlined in [this resource](https://git.generalassemb.ly/SEIR-710-EC/Course-Materials/blob/main/02_Lesson_Materials/Unit_2/resources/3-express-framework/3.2-express-routers-controllers-full.md).
+=======
+# Express-skills-lab
+>>>>>>> ed5a6d28de11d5c51934e025b5ac5d9bdf616341
