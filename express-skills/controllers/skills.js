@@ -11,8 +11,8 @@ module.exports = {
 
 function index(req,res,next){
     const contextObject = {
-        title: 'All Skills'
-       skills: Skill.getAll()
+        title: 'All Skills',
+        skills: Skill.getAll()
     }
     
     res.render('skills/index', contextObject)
