@@ -1,17 +1,17 @@
 <%- include('../partials/header')%>
 
-    <h1>Todos</h1>
+    <h1>Skills</h1>
     <ul>
-      <% todos.forEach(function(t) { %>
+      <% skills.forEach(function(t) { %>
         <li>
-          <form method="POST" action="/todos/<%=t.id%>?_method=DELETE">
+          <form method="POST" action="/skills/<%=t.id%>?_method=DELETE">
             <button type="submit">X</button>
           </form>
 
 
-          <a href="/todos/<%=t.id%>"><%= t.todo %></a>
+          <a href="/skills/<%=t.id%>"><%= t.todo %></a>
             - 
-          <%= t.done ? 'done' : 'not done' %>
+          <%= t.done ? 'mastered' : 'not mastered' %>
         </li>
       <% }); %>
     </ul>

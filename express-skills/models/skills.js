@@ -18,14 +18,12 @@ function getOne(id){
   id = Number(id) 
   return skills.find((skill)=>skill.id === id)
 }
-  
-  return todos.find(todo=>todo.id === id)
 
 
 function create(data){
 
   const newSkill = {...data}
-  newSkill.done = data.done ? true : false 
+  newSkill.mastered = data.mastered ? true : false 
   newSkill.id = Date.now() % 1000000
   skills.push(newSkill)
   

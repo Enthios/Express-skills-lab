@@ -7,7 +7,7 @@ var methodOverride = require('method-override')
 
 
 var indexRouter = require('./routes/index');
-var todosRouter = require('./routes/skills');
+var skillsRouter = require('./routes/skills');
 
 var app = express();
 
@@ -30,7 +30,7 @@ app.use(function(req,res,next){
 
 
 app.use('/', indexRouter);
-app.use('/todos', todosRouter);
+app.use('/skills', skillsRouter);
 
 app.use(function(req, res, next) {
   next(createError(404));
